@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session cost",
+    "description": "Shows the live monetary cost of the current session beside the composer's token usage chip."
+  }
+}

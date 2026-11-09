@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "会话费用",
+    "description": "在会话窗口底部、token 用量统计旁实时显示本次会话的花费。",
+    "detail": "README.zh.md"
+  }
+}

@@ -1,0 +1,24 @@
+# Insert the host half: the `sessionCost` session-projection unit that folds
+# provider-reported token usage into money. The Client half ships through
+# `dsh.client` in package.json and is loaded by the web module table.
+#
+# No configuration is required: the built-in tables cover the DeepSeek models,
+# so a fresh install is zero-config. Users edit rates from the Web UI
+# (Plugins -> this bundle -> Configure), which stores only their overrides in
+# the profile patch through the settings surface; they never edit this file by
+# hand.
+#
+# This row may still be overridden from the profile's cordis.patch.yml for
+# advanced or scripted setups, e.g.:
+#
+#   - id: session-cost
+#     name: 'dsh-session-cost-live'
+#     config:
+#       peakPricing: false
+#       prices:      # CNY per 1M tokens
+#         'changan-gateway/6411:glm-5.2': { input: 2, cacheRead: 0.2, cacheWrite: 2, output: 8 }
+#       pricesUsd:   # USD per 1M tokens
+#         'changan-gateway/6411:glm-5.2': { input: 0.3, cacheRead: 0.03, cacheWrite: 0.3, output: 1.2 }
+- insert:
+    - id: session-cost
+      name: 'dsh-session-cost-live'
